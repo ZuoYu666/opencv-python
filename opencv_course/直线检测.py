@@ -33,8 +33,6 @@ def line_detect_possible_demo(image):      # 存储多为数组API由cv.HoughLin
         cv.line(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
     cv.imshow("line_detect_possible_demo", image)
 
-
-
 src = cv.imread("C:/Users/11410/opencv_code/opencv_exercises/images/image_lines.jpg")
 cv.namedWindow("input image", cv.WINDOW_AUTOSIZE)
 cv.imshow("input image", src)

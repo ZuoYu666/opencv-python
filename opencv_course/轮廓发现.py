@@ -8,12 +8,10 @@ import numpy as np
 
 
 def contours_demo(image):
-    # dst = cv.GaussianBlur(image, (3, 3), 0)        #这是二值图像的获取方法之一，与下面的并列
-    # gray = cv.cvtColor(dst, cv.COLOR_BGR2GRAY)
-    # ret, binary = cv.threshold(gray, 0, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
-    # cv.imshow("binary image", binary)
-
-
+    dst = cv.GaussianBlur(image, (3, 3), 0)        #这是二值图像的获取方法之一，与下面的并列
+    gray = cv.cvtColor(dst, cv.COLOR_BGR2GRAY)
+    ret, binary = cv.threshold(gray, 0, 255, cv.THRESH_BINARY | cv.THRESH_OTSU)
+    cv.imshow("binary image", binary)
 
     contours, heriachy = cv.findContours(binary, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)  # EXTERNAL只显示外轮廓，二TREE里面外面都显示
     for i, contour in enumerate(contours):           # 一个容器里面list循环
